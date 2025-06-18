@@ -20,7 +20,7 @@ if f(a) == f(b):
 e, N = float(input("Enter the tolerable error: ")), int(input("Enter the max. no of iterations: "))
 
 table = []
-midpoints = []
+plot_points = []
 
 x = np.linspace(-5, 5, 1000)
 
@@ -44,7 +44,7 @@ while itr <= N:
         "error": err
     })
 
-    midpoints.append(c)
+    plot_points.append(c)
 
     if err < e:
         break
@@ -65,11 +65,11 @@ if itr > N:
 else :
     print(f"\nSolution found at {c} in {itr} iterations.\n")
     table = pd.DataFrame(table)
-    midpoints = np.array(midpoints)
+    plot_points = np.array(plot_points)
     print(table.to_string(index=False))
     plt.figure()
     plt.plot(x, f(x), label=eqn, color="r")
-    plt.scatter(midpoints, f(midpoints), color="b")
+    plt.scatter(plot_points, f(plot_points), color="b")
     plt.axvline(0, 0, color="black")
     plt.axhline(0, 0, color="black")
     plt.xlabel("x")
@@ -77,7 +77,7 @@ else :
     plt.legend()
     plt.grid(True)
     plt.title(eqn)
-    for i, val in enumerate(midpoints):
+    for i, val in enumerate(plot_points):
         plt.text(val, f(val), f'{i+1}')
     plt.show()
 

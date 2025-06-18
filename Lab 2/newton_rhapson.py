@@ -1,3 +1,4 @@
+# Newton Rhapson
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -29,6 +30,7 @@ while itr <= N:
     err = abs(f(b))
 
     table.append({
+        "Iterations": itr,
         "a": a,
         "b": b,
         "f(a)": f(a),
