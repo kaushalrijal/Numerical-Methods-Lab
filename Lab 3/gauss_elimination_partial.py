@@ -14,9 +14,10 @@ for i in range(n):
     #     row.append(inp)
     # A.append(row)
 
-print("The augmented matrix is:\n", A)
 
 A = np.array(A)
+
+print("The augmented matrix is:\n", A)
 
 for i in range(n):
     p_row = np.argmax(abs(A[i:, i]))+i
