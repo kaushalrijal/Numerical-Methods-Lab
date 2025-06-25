@@ -9,9 +9,10 @@ A = []
 for i in range(n):
     A.append(list(map(float, input(f"Enter {i+1}th row:: ").split())))
 
-print("The augmented matrix is:\n", A)
 
 A = np.array(A)
+
+print("The augmented matrix is:\n", A)
 
 for i in range(n):
     p_row = np.argmax(abs(A[i:, i])) + i
@@ -25,6 +26,4 @@ print(f"The upper triangular matrix is:\n", np.matrix(A))
 
 x = A[:, -1]
 
-print("The solution is:")
-print(x)
-
+print("The solution is:", x)
