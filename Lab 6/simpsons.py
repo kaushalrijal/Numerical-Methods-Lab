@@ -41,7 +41,7 @@ print(f"\nThe approximate integral is {I}")
 
 plt.figure()
 plt.plot(x, [y(i) for i in x], label=f"Integration of {func}")
-x_val = np.linspace(a-10, b+10, 1000)
+x_val = np.linspace(a-2, b+2, 1000)
 plt.plot(x_val, [y(x) for x in x_val])
 y_val = [y(x) for x in x]
 for i in range(0, n, 2):
